@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audit_Approval_Status__c</fullName>
+    <description>Result of audit.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Result of audit.</inlineHelpText>
+    <label>Audit Approval Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Audit_Approval_Status</valueSetName>
+    </valueSet>
+</CustomField>

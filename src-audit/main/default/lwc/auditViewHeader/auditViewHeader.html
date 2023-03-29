@@ -1,0 +1,82 @@
+<template>
+    <article class="slds-card slds-p-around_medium slds-m-bottom_medium">
+        <!-- BEGIN: Title and action header row -->
+        <div class="header">
+            <div class="header-side-col">&nbsp;</div>
+            <h2 class="header-center slds-text-heading_medium">{headerText}</h2>
+            <div class="header-side-col slds-text-align_right">
+                <lightning-button
+                    lwc:if={isNotApproved}
+                    disabled={isApproveButtonDisabled}
+                    variant="success"
+                    icon-name="utility:check"
+                    label="Approve Audit"
+                    onclick={handleApprove}
+                    class="slds-m-right_small"
+                >
+                </lightning-button>
+                <lightning-button
+                    lwc:if={hasNoSelection}
+                    disabled={hasNoItems}
+                    variant="brand"
+                    icon-name="utility:play"
+                    label="Audit Details"
+                    onclick={handleBegin}
+                >
+                </lightning-button>
+                <lightning-button
+                    lwc:if={isApproved}
+                    variant="base"
+                    icon-name="utility:check"
+                    label="Audit Approved"
+                    class="slds-m-right_small"
+                >
+                </lightning-button>
+                <lightning-button
+                    lwc:if={hasSelection}
+                    icon-name="utility:table"
+                    label="Audit Overview"
+                    onclick={handleShowOverview}
+                >
+                </lightning-button>
+            </div>
+        </div>
+        <!-- END: Title and action header row -->
+
+        <div
+            lwc:if={hasNoItems}
+            class="slds-text-align_center slds-m-top_medium"
+        >
+            There are no items to audit for this record.
+        </div>
+
+        <template lwc:else>
+            <!-- BEGIN: Progress header row -->
+            <div lwc:if={hasSelection} class="header slds-m-top_medium">
+                <lightning-button-icon
+                    icon-name="utility:chevronleft"
+                    onclick={handlePrevious}
+                    alternative-text="Previous item"
+                    title="Previous item"
+                    disabled={hasNoPreviousItem}
+                ></lightning-button-icon>
+                <div class="header-center">
+                    <p>{progressLabel}</p>
+                    <lightning-progress-bar
+                        value={progressValue}
+                        size="large"
+                    ></lightning-progress-bar>
+                </div>
+                <lightning-button-icon
+                    icon-name="utility:chevronright"
+                    onclick={handleNext}
+                    alternative-text="Next item"
+                    title="Next item"
+                    disabled={hasNoNextItem}
+                ></lightning-button-icon>
+            </div>
+            <!-- END: Progress header row -->
+            <p lwc:else class="slds-text-align_center slds-m-top_medium">{totalItemCount} records</p>
+        </template>
+    </article>
+</template>

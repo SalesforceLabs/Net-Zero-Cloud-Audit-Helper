@@ -1,0 +1,13 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+.header-center {
+    flex-grow: 1;
+    text-align: center;
+}
+.header-side-col {
+    width: 25%;
+}

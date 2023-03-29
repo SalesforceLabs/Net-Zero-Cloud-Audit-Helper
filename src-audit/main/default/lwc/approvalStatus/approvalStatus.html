@@ -1,0 +1,26 @@
+<template>
+    <lightning-button-group>
+        <lightning-button
+            variant="success"
+            label="Approve"
+            title="Approve"
+            icon-name={approveIcon}
+            disabled={isApproved}
+            onclick={handleApproveClick}>
+        </lightning-button>
+        <lightning-button
+            label="Recall Approval"
+            title="Recall Approval"
+            disabled={isPending}
+            onclick={handleRecallApprovalClick}>
+        </lightning-button>
+        <lightning-button
+            variant="destructive"
+            label="Reject"
+            title="Reject"
+            icon-name={rejectIcon}
+            disabled={isRejected}
+            onclick={handleRejectClick}>
+        </lightning-button>
+    </lightning-button-group>
+</template>

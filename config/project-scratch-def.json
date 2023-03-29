@@ -1,0 +1,21 @@
+{
+    "orgName": "pozil company",
+    "edition": "Developer",
+    "features": [
+        "EnableSetPasswordInApi",
+        "SustainabilityCloud",
+        "SustainabilityApp"
+    ],
+    "settings": {
+        "lightningExperienceSettings": {
+            "enableS1DesktopEnabled": true
+        },
+        "mobileSettings": {
+            "enableS1EncryptedStoragePref2": false
+        },
+        "industriesSettings": {
+            "enableSustainabilityCloud": true,
+            "enableSCCarbonAccounting": true
+        }
+    }
+}

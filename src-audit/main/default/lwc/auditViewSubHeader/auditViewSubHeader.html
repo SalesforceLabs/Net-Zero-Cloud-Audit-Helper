@@ -1,0 +1,31 @@
+<template>
+    <div class="slds-media slds-media_center slds-p-bottom_medium">
+        <div class="slds-media__figure">
+            <lightning-icon
+                icon-name={iconName}
+                size="medium"
+                alternative-text={subtitle}
+                title={subtitle}
+            ></lightning-icon>
+        </div>
+        <div class="slds-media__body">
+            <div class="slds-page-header__name">
+                <div class="slds-page-header__name-title">
+                    <h1>
+                        <span>{subtitle}</span>
+                        <span class="slds-page-header__title slds-truncate"
+                            >{title}</span
+                        >
+                    </h1>
+                </div>
+            </div>
+        </div>
+        <lightning-button
+            lwc:if={showViewRecordButton}
+            label="View Record"
+            title="View Record"
+            onclick={handleNavigateToRecord}
+            class="slds-m-left_x-small slds-float_right">
+        </lightning-button>
+    </div>
+</template>

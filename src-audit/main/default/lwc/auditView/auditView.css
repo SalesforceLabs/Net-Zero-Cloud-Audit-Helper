@@ -1,0 +1,8 @@
+.compare-view {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.compare-view > div {
+    width: 50%;
+}

@@ -1,0 +1,21 @@
+<template>
+    <div>
+        <lightning-spinner lwc:if={isAttachmentLoading}></lightning-spinner>
+        <template lwc:else>
+            <c-audit-view-sub-header
+                title={headerTitle}
+                subtitle="Attachment"
+                icon-name="standard:file"
+            ></c-audit-view-sub-header>
+            <div class="doc-wrapper" lwc:if={attachment}>
+                <iframe lwc:if={isPdf} src={attachmentUrl}></iframe>
+                <img
+                    lwc:else
+                    src={attachmentUrl}
+                    alt={attachment.title}
+                    title={attachment.title}
+                />
+            </div>
+        </template>
+    </div>
+</template>

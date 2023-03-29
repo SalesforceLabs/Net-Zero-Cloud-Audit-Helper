@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audit_Error__c</fullName>
+    <description>Write here any errors found while auditing.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Write here any errors found while auditing.</inlineHelpText>
+    <label>Audit Error</label>
+    <length>512</length>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,7 @@
+.doc-wrapper {
+    aspect-ratio: 8 / 11; /* Letter format */
+}
+.doc-wrapper iframe {
+    width: 100%;
+    height: 100%;
+}

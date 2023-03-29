@@ -1,0 +1,19 @@
+{
+  "packageDirectories": [
+    {
+      "path": "src-audit",
+      "default": true,
+      "package": "Net Zero Cloud Audit Helper",
+      "versionName": "Spring '23 release",
+      "versionNumber": "0.1.0.NEXT",
+      "versionDescription": "Streamline Net Zero Cloud carbon footprint audits with the Audit Helper"
+    }
+  ],
+  "name": "net-zero-cloud-audit-helper",
+  "namespace": "nzc_ah",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "57.0",
+  "packageAliases": {
+    "Net Zero Cloud Audit Helper": "0HoDm000000KyovKAC"
+  }
+}
