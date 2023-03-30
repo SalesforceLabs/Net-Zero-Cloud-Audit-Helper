@@ -31,7 +31,16 @@ export default class AuditView extends LightningElement {
     }
 
     async connectedCallback() {
-        const searchUrl = window.location.search;
+        let searchUrl;
+        const isConsoleNavigation = await this.invokeWorkspaceAPI('isConsoleNavigation', {});
+        if (isConsoleNavigation) {
+            const tabInfo = await this.invokeWorkspaceAPI('getFocusedTabInfo', {});
+            const urlString = await this.invokeWorkspaceAPI('getTabURL', { tabId: tabInfo.tabId });
+            searchUrl = new URL(urlString).search;
+        } else {
+            searchUrl = window.location.search;
+        }
+
         if (!searchUrl) {
             throw new Error("Failed to retrieve current page's URL");
         }
@@ -64,6 +73,30 @@ export default class AuditView extends LightningElement {
             }
         }
     }
+
+    invokeWorkspaceAPI(methodName, methodArgs) {
+        return new Promise((resolve, reject) => {
+          const apiEvent = new CustomEvent("internalapievent", {
+            bubbles: true,
+            composed: true,
+            cancelable: false,
+            detail: {
+              category: "workspaceAPI",
+              methodName: methodName,
+              methodArgs: methodArgs,
+              callback: (err, response) => {
+                if (err) {
+                    return reject(err);
+                } else {
+                    return resolve(response);
+                }
+              }
+            }
+          });
+     
+          window.dispatchEvent(apiEvent);
+        });
+      }
 
     selectItem(index) {
         this.itemIndex = index;

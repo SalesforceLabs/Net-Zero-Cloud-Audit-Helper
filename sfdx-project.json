@@ -6,7 +6,14 @@
       "package": "Net Zero Cloud Audit Helper",
       "versionName": "Spring '23 release",
       "versionNumber": "0.1.0.NEXT",
-      "versionDescription": "Streamline Net Zero Cloud carbon footprint audits with the Audit Helper"
+      "versionDescription": "Streamline Net Zero Cloud carbon footprint audits with the Audit Helper",
+      "definitionFile": "config/project-scratch-def.json",
+      "apexTestAccess": {
+        "permissionSets": [
+          "NetZeroAuditor",
+          "NetZeroManager"
+        ]
+      }
     }
   ],
   "name": "net-zero-cloud-audit-helper",
@@ -14,6 +21,7 @@
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "57.0",
   "packageAliases": {
-    "Net Zero Cloud Audit Helper": "0HoDm000000KyovKAC"
+    "Net Zero Cloud Audit Helper": "0HoDm000000KyovKAC",
+    "Net Zero Cloud Audit Helper@0.1.0-2": "04tDm000000YKeNIAW"
   }
 }
