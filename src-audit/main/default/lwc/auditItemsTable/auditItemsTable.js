@@ -145,9 +145,9 @@ export default class AuditItemsTable extends LightningElement {
         if (this.activeFilter === 'show_approved') {
             this.filteredItems = this.allItems.filter(row => row.status === 'Approved');
         } else if (this.activeFilter === 'show_pending_approval') {
-            this.filteredItems = this.allItems.filter(row => row.status !== 'Approved');
+            this.filteredItems = this.allItems.filter(row => row.status === 'Pending Approval');
         } else if (this.activeFilter === 'show_rejected') {
-            this.filteredItems = this.allItems.filter(row => row.status !== 'Rejected');
+            this.filteredItems = this.allItems.filter(row => row.status === 'Rejected');
         } else {
             this.filteredItems = this.allItems;
         }
