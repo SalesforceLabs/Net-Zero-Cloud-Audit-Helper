@@ -17,6 +17,7 @@ public with sharing class AuditController {
         return records;
     }
 
+    @TestVisible
     private static List<RecordForDatatable> transformForDatatable(List<sObject> sobjects, String apiName) {
         List<RecordForDatatable> records = new List<RecordForDatatable>();
         for (sObject sobj : sobjects) {
