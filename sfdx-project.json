@@ -6,6 +6,7 @@
       "package": "Net Zero Cloud Audit Helper",
       "versionName": "Spring '23 release",
       "versionNumber": "1.0.0.NEXT",
+      "ancestorVersion": "HIGHEST",
       "versionDescription": "Streamline Net Zero Cloud footprint audits with the Audit Helper",
       "definitionFile": "config/project-scratch-def.json",
       "apexTestAccess": {
