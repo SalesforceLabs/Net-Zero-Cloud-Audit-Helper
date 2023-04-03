@@ -5,7 +5,7 @@
       "default": true,
       "package": "Net Zero Cloud Audit Helper",
       "versionName": "Spring '23 release",
-      "versionNumber": "1.0.0.NEXT",
+      "versionNumber": "1.1.0.NEXT",
       "ancestorVersion": "HIGHEST",
       "versionDescription": "Streamline Net Zero Cloud footprint audits with the Audit Helper",
       "definitionFile": "config/project-scratch-def.json",
@@ -23,6 +23,7 @@
   "sourceApiVersion": "57.0",
   "packageAliases": {
     "Net Zero Cloud Audit Helper": "0HoDm000000KyovKAC",
-    "Net Zero Cloud Audit Helper@1.0.0-5": "04tDm000000YKnCIAW"
+    "Net Zero Cloud Audit Helper@1.0.0-5": "04tDm000000YKnCIAW",
+    "Net Zero Cloud Audit Helper@1.1.0-1": "04tDm000000YKnHIAW"
   }
 }
