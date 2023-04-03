@@ -42,4 +42,21 @@ private with sharing class AuditControllerTest {
         Assert.areEqual('Approved', records[0].status);
 
     }
+
+    @isTest
+    static void transformForDatatable() {
+        List<SObject> records = new List<SObject>{
+            new StnryAssetEnrgyUse(
+                Id = TestUtility.getFakeId(StnryAssetEnrgyUse.SObjectType),
+                Name = 'testName',
+                Audit_Approval_Status__c = 'testStatus',
+                Audit_Error__c = 'testError'
+            )
+        };
+
+        List<AuditController.RecordForDatatable> dtRecords = AuditController.transformForDatatable(records, 'StnryAssetEnrgyUse');
+
+        Assert.areEqual(records.size(), dtRecords.size());
+        Assert.areEqual('testName', dtRecords[0].name);
+    }
 }
