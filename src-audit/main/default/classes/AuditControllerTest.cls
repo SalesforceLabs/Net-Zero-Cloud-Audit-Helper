@@ -1,5 +1,5 @@
-//@isTest
-private with sharing class AuditControllerTest {
+@isTest
+public class AuditControllerTest {
     @isTest
     static void getRecords() {
        // GIVEN
@@ -13,11 +13,13 @@ private with sharing class AuditControllerTest {
         otherEmissionsFactor.Name='otherEmissionsFactor1';
         insert otherEmissionsFactor;
 
+        Id recordTypeId = Schema.SObjectType.StnryAssetEnvrSrc.getRecordTypeInfos()[0].getRecordTypeId();
         StnryAssetEnvrSrc source = new StnryAssetEnvrSrc();
+        source.RecordTypeId = recordTypeId;
         source.Name = 'SOURCE1';
         source.ElectricityEmssnFctrId = elecEmissionsFactor.Id;
         source.OtherEmssnFctrId = otherEmissionsFactor.Id;
-        insert source; 
+        insert source;
 
         StnryAssetCrbnFtprnt footprint = new StnryAssetCrbnFtprnt();
         footprint.Name = 'FT 1';
@@ -40,6 +42,5 @@ private with sharing class AuditControllerTest {
         Assert.areEqual('EU 1', records[0].name);
         Assert.areEqual('StnryAssetEnrgyUse', records[0].apiName);
         Assert.areEqual('Approved', records[0].status);
-
     }
 }

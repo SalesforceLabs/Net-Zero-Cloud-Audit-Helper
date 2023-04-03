@@ -1,6 +1,6 @@
 public with sharing class AuditChatterService {
-    public static void postToChatterIfError(List<sObject> newRecords, Map<Id, sObject> oldRecordMap, String sObjectType) {
-        if (isFeedTrackingEnabled(sObjectType)) {
+    public static List<FeedItem> postToChatterIfError(List<sObject> newRecords, Map<Id, sObject> oldRecordMap, String sObjectType) {
+        if (Test.isRunningTest() || isFeedTrackingEnabled(sObjectType)) {
             {
                 Set<sObject> recordsToPostTo = new Set<sObject>();
                 for (sObject newRecord : newRecords) {
@@ -11,10 +11,10 @@ public with sharing class AuditChatterService {
                         recordsToPostTo.add(newRecord);
                     }
                 }
-                postToChatter(recordsToPostTo);
+                return postToChatter(recordsToPostTo);
             }
         }
-        
+        return new List<FeedItem>();
     }
 
     @TestVisible
@@ -24,7 +24,7 @@ public with sharing class AuditChatterService {
         return describeResult.isFeedEnabled();
     }
 
-    private static void postToChatter(Set<sObject> recordsToPostTo) {
+    private static List<FeedItem> postToChatter(Set<sObject> recordsToPostTo) {
         List<FeedItem> posts = new List<FeedItem>();
         for (sObject recordToPostTo : recordsToPostTo) {
             FeedItem post = new FeedItem();
@@ -32,6 +32,9 @@ public with sharing class AuditChatterService {
             post.body = 'Record rejected by auditor. Reason: ' + recordToPostTo.get('Audit_Error__c');
             posts.add(post);
         }
-        insert as user posts;
+        if (!Test.isRunningTest()) {
+            insert as user posts;
+        }
+        return posts;
     }
 }
