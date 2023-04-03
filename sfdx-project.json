@@ -7,7 +7,7 @@
       "versionName": "Spring '23 release",
       "versionNumber": "0.1.0.NEXT",
       "ancestorVersion": "HIGHEST",
-      "versionDescription": "Streamline Net Zero Cloud carbon footprint audits with the Audit Helper",
+      "versionDescription": "Streamline Net Zero Cloud footprint audits with the Audit Helper",
       "definitionFile": "config/project-scratch-def.json",
       "apexTestAccess": {
         "permissionSets": [
