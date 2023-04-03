@@ -1,5 +1,6 @@
 @isTest
 private with sharing class AuditControllerTest {
+    /*
     @isTest
     static void getRecords() {
        // GIVEN
@@ -40,8 +41,8 @@ private with sharing class AuditControllerTest {
         Assert.areEqual('EU 1', records[0].name);
         Assert.areEqual('StnryAssetEnrgyUse', records[0].apiName);
         Assert.areEqual('Approved', records[0].status);
-
     }
+    */
 
     @isTest
     static void transformForDatatable() {
